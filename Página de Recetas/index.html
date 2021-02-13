@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <!-- Iconos Jamicons -->
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="styles/index.css">
+
+    <link rel="icon" type="image/png" href="/images/undraw_cooking_orange.svg">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <!-- Pondremos el logo y los links a las demas páginas -->
+    <header class="main-header section-container">
+        <div class="content-wrapper">
+            <!-- Logo -->
+            <!-- el / indica que el vinculo dirigira a esta misma página -->
+            <a href="/">
+                <!-- imagen del logo -->
+                <!-- src = "url o lugar de la imagen" alt(texto alternativo, sale cuando no se carga la imagen) -->
+                <img src="images/undraw_Chef_cu0r.svg"
+                    alt="Logo de la empresa">
+            </a>
+
+            <!-- Para un icono de menu en movil -->
+            <span class="jam jam-menu" id="open-menu-button"></span>
+
+            <!-- Nav bar -->
+            <nav class="main-menu" id="main-menu">
+                <span class="jam jam-close" id="close-menu-button"></span>
+
+                <!-- ul(unordened list)  aqui estaran los links de las paginas-->
+                <ul>
+                    <!-- list(list item) -->
+                    <li>
+                        <!-- Link a una de nuestras páginas -->
+                        <!-- # es para que nos diriga a nada(por el momento) -->
+                        <a href="/index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/pages/recetas.html">Recetas</a>
+                    </li>
+                    <li>
+                        <a href="/pages/nosotros.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="/pages/contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección del banner-->
+        <section class="main-banner section-container">
+            <div class="content-wrapper content">
+                <div class="container">
+                    <h1 class="title">Bienvenidos</h1>
+                    <p class="subtitle">Esta es una página responsive de recetas, estan muy chidoris</p>
+                    <div>
+                        <a class="button white" href="/pages/contacto.html">Contactate con nosotros</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="image" src="images/undraw_cooking_lyxy.svg" alt="imagen del banner">
+                </div>
+            </div>
+        </section>
+
+        <section class="recetas-destacadas  section-container">
+            <h2 class="title">Recetas Destacadas</h2>
+
+            <div class="content-wrapper">
+                <!-- Estructura de una receta destacada -->
+                <article class="destacada-item">
+                    <div class="image-container">
+                        <a>
+                            <img src="https://www.mexicoenmicocina.com/wp-content/uploads/2011/09/Calabacitas-Rellenas-de-Queso-3-640x640.jpg"
+                                alt="Imagen Calabacitas Rellenas">
+                        </a>
+                    </div>
+                    <h3>Calabacitas Rellenas de Queso</h3>
+                    <p>Las calabacitas pueden agregarse a un sinfín de recetas, y por sí solas pueden ser cocinadas a la
+                        parrilla, al vapor, rostizadas en el horno o fritas, esta receta de calabacitas rellenas de
+                        queso te van a encantar</p>
+                    <span class="ingredientes">suficiente de aceite vegetal,
+                        1/4 cebollas,
+                        1 diente de ajo,
+                        5 chiles guajillos (limpios),
+                        1/2 vasos de agua,
+                        1 envase de Puré De Tomate Con Chile Fresco Del Fuerte (210g),
+                        1 cucharadita de comino,
+                        1 cucharadita de orégano,
+                        al gusto de sal,
+                        al gusto de pimienta,
+                        suficiente de hoja de plátano (asada),
+                        4 filetes de huachinango,
+                        1 taza de queso oaxaca deshebrado,
+                        1 taza de cebolla morada(fileteada),
+                        suficiente de orégano fresco (para decorar)</span>
+                    <span class="procedimiento"> Calienta una sartén a temperatura media, agrega un poco de aceite
+                        vegetal y sofríe la cebolla,
+                        el ajo y los chiles guajillo por unos minutos para que los ingredientes comiencen a soltar sus
+                        sabores, añade el agua y el Puré de tomate chile fresco Del Fuerte®, sazona con comino, orégano,
+                        sal y pimienta, y cocina por 5 minutos más.
+                        Licúa lo anterior hasta obtener una mezcla tersa.
+                        Arma un empapelado con la hoja de plátano, coloca el pescado, salsa, un poco de queso Oaxaca y
+                        la cebolla; cierra de manera que se selle.
+                        Calienta una sartén a temperatura baja, agrega el pescado envuelto y tapa la sartén, cocina el
+                        pescado por 30 minutos aproximadamente.
+                        Desenvuelve el pescado y sirve con orégano fresco.</span>
+                </article>
+
+                <article class="destacada-item">
+                    <div class="image-container">
+                        <a>
+                            <img src="https://i.ytimg.com/vi/pGx9w2GJ_mc/maxresdefault.jpg" alt="Imagen Pollo a la Naranja">
+                        </a>
+                    </div>
+                    <h3>Pollo a la Naranja</h3>
+                    <p>El pollo a la naranja es una comida típica de Asia. No tiene nada que ver con el pato al horno a
+                        la naranja, plato típico francés. En este caso, se trata de unas pechugas de pollo cocinadas
+                        junto a una salsa hecha a base de zumo de naranja</p>
+                    <span class="ingredientes">
+                        4 pechugas de pollo,
+                        2 cebollas,
+                        4 naranjas,
+                        2 cucharadas de salsa de soja,
+                        2 dientes de ajo,
+                        1 chorrito de vinagre,
+                        1 cucharada de azúcar,
+                        2 cucharadas de maizena,
+                        sal y pimienta,
+                        aceite de oliva
+                    </span>
+                    <span class="procedimiento">
+                        Preparamos la salsa. Para ello, exprimimos las naranjas en un bol. Añadimos la salsa de soja, los dientes de ajo picados, 
+                        el chorrito de vinagre, el azúcar, la maizena, que espesará la salsa en la cocción y un poco de sal y de pimienta negra recién molida. 
+                        Puedes añadir aquí el pollo y dejarlo macerar durante una hora o, puedes pasar directamente al siguiente paso. En una sartén a fuego medio, 
+                        añadimos un chorrito de aceite. Cuando esté caliente añadimos la cebolla picada muy finamente. Salpimentamos y dejamos cocinar 5 minutos, 
+                        mientras removemos de vez en cuando con una cuchara de palo. Seguimos con la receta del pollo a la naranja. Pasado el tiempo, subimos 
+                        la potencia del fuego y añadimos las pechugas de pollo, que ya están previamente cortadas en tamaño de bocado y salpimentadas. Mezclamos 
+                        con la cebolla y sellamos los taquitos durante un par de minutos. 
+                    </span>
+                </article>
+
+                <article class="destacada-item">
+                    <div class="image-container">
+                        <a>
+                            <img src="https://cdn.kiwilimon.com/recetaimagen/31770/36570.jpg" alt="Imagen Pastel">
+                        </a>
+                    </div>
+                    <h3>Pastel de Chocolate Relleno de Cema Pastelera</h3>
+                    <p>¿Estás buscando recetas de pasteles rellenos? Este Pastel de Chocolate Relleno de Crema Pastelera
+                        es un delicioso postre que es muy fácil de hacer.
+                    </p>
+                    <span class="ingredientes">4 huevos,
+                        1 taza de azúcar,
+                        1 1/2 tazas de mantequilla (fundida),
+                        1 1/4 tazas de leche de vaca,
+                        1 cucharadita de vainilla líquida,
+                        2 1/4 tazas de harina,
+                        1/2 tazas de cocoa,
+                        3 cucharaditas de polvo para hornear,
+                        1/8 cucharaditas de sal,
+                        4 yemas de huevo para la crema pastelera,
+                        1 taza de azúcar para la crema pastelera,
+                        4 cucharadas de fécula de maíz para la crema pastelera,
+                        3 cucharadas de vainilla líquida para la crema pastelera,
+                        2 tazas de leche de vaca para la crema pastelera,
+                        1 taza de crema para batir para la crema pastelera,
+                        1 cucharada de ralladura de limón amarillo (para la crema pastelera),
+                        2 sobres de grenetina para la crema pastelera (7 g/u) (hidratada y fundida),
+                        1 taza de fresa lavadas y desinfectadas (cortadas en cubitos),
+                        2 paquetes de queso crema (190 g c/u) para el betún,
+                        1 taza de crema de avellanas (para el betún),
+                        3 tazas de chocolate amargo (para la cobertura),
+                        2 cucharadas de mantequilla (para la cobertura),
+                        2 cucharadas de miel de abeja (para la cobertura),
+                        al gusto de fresa para decorar,
+                        al gusto de menta para decorar,
+                        al gusto de Polvo dorado comestible (para decorar)</span>
+                    <span class="procedimiento">Precalienta el horno a 170°C.
+                        Para el pastel, bate los huevos con el azúcar y agrega la mantequilla, la leche y la esencia de vainilla, bate hasta integrar. Añade poco a poco sin dejar de batir la harina, la cocoa, el polvo para hornear y la sal. Vierte la mezcla en una charola para horno previamente engrasada y enharinada, hornea por 15 minutos y enfría.
+                        Con ayuda de un aro para pastelería de 15 cm de diámetro, corta 3 discos de pastel. Reserva dos discos completos y con ayuda de un plato de 10 cm de diámetro corta el centro del tercer disco y reserva. Para la crema pastelera, en un bowl mezcla las yemas con el azúcar, la fécula de maíz y la esencia de vainilla.
+                        En una olla calienta la leche a fuego medio, agrega una cucharada de leche caliente a la mezcla de yemas y bate para temperar. Agrega las yemas a la olla y cocina a fuego bajo moviendo constantemente hasta espesar. Enfría de inmediato.
+                        Refrigera la crema pastelera tapada con plástico antiadherente hasta que tenga una consistencia espesa y firme.
+                        Mientras tanto, bate la crema para bate con la ralladura de limón amarillo hasta que doble su volumen y reserva.
+                        Una vez que la crema pastelera esté firme, bate con ayuda de una batidora hasta deshacer los grumos, añade poco a poco la crema batida y bate suavemente. Agrega en forma de hilo la grenetina y continúa batiendo hasta integrar por completo.
+                        Para el armado, coloca un bizcocho de pastel en el aro seguido del bizcocho al que le retiraste el centro. Vierte la mezcla de la crema pastelera en el centro y las fresas en cubitos, extiende con ayuda de una espátula escalonada. Cubre con el otro bizcocho y refrigera 1 hora.
+                        Para el betún, bate el queso crema con la crema de avellanas hasta tener un betún suave y terso.Para la cobertura, en un bowl mezcla la crema para batir caliente con la mantequilla y la miel de abeja, enfría.
+                        Cubre el pastel con el betún y alisa con ayuda de una espátula escalonada. Refrigera 20 minutos o hasta que el betún esté firme.Una vez que el betún esté firme, vierte de golpe la cobertura y extiende con una espátula para cubrir por completo el pastel. Decora con las fresas, menta y polvo dorado comestible, deja secar y sirve.</span>
+                </article>
+
+                <article class="destacada-item">
+                    <div class="image-container">
+                        <a>
+                            <img src="https://cdn.kiwilimon.com/recetaimagen/28778/29809.jpg"
+                                alt="Milanesas empanizadas con queso panela">
+                        </a>
+                    </div>
+                    <h3>Milanesas empanizadas con queso panela </h3>
+                    <p>Si estás cuidando la línea y quieres una opción saludable, pero amas los empanizados, estas milanesas de pollo son la mejor receta para ti. Están rellenas de 
+                        jamón y queso panela con un crujiente empanizado que no requiere aceite. ¡Pruébalas!</p>
+                        <span class="ingredientes">4 milanesas de pollo,
+                            8 rebanadas de jamón de pavo,
+                            200 gramos de queso panela (cortado en bastones gruesos),
+                            1/2 tazas de harina,
+                            185 gramos de Empanizador Hojuelas De Maíz Bimbo,
+                            4 jitomates, finamente picado,
+                            1/4 cebollas moradas (finamente picada),
+                            2 aguacates, cortado en cubitos,
+                            1/4 piñas, cortada en cubitos,
+                            2 cucharadas de cilantro fresco (finamente picado),
+                            2 chiles serranos, finamente picado,
+                            1/4 tazas de jugo de limón,
+                            1/2 tazas de aceite de oliva,
+                            1 cucharadita de sal,
+                            1/2 cucharaditas de pimienta,
+                            1 lechuga italiana (para acompañar)</span>
+                    <span class="procedimiento">Coloca una milanesa de pollo sobre una tabla, agrega dos rebanadas de jamón y un poco de queso, enrolla e inserta unos palillos para conservar la forma.
+                        Empaniza cada milanesa de pollo, pasando por harina, huevo y Empanizador Hojuelas de Maíz Bimbo.
+                        Calienta una sartén a fuego bajo y cocina los rollitos de pollo hasta que estén cocidas. Tapa si es necesario.
+                        Para la salsa, mezcla todos los ingredientes en un bowl y reserva.
+                        Sirve las milanesas con la salsa.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="recetas-recientes section-container">
+            <h2>Recetas recientes</h2>
+            <div class="content-wrapper">
+                <a class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Pescado Empapelado</h3>
+                            <p>Esta receta de pescado envuelto es una forma ideal de comer proteína saludable,
+                                con una preparación fácil y deliciosa. Este pescado va envuelto en hoja santa,
+                                lo que le da un sabor increíble.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://cdn.kiwilimon.com/recetaimagen/37303/46980.jpg"
+                                alt="Imagen Pescado Empapelado">
+                        </div>
+                        <span class="ingredientes">suficiente de aceite vegetal,
+                            1/4 cebollas,
+                            1 diente de ajo,
+                            5 chiles guajillos (limpios),
+                            1/2 vasos de agua,
+                            1 envase de Puré De Tomate Con Chile Fresco Del Fuerte (210g),
+                            1 cucharadita de comino,
+                            1 cucharadita de orégano,
+                            al gusto de sal,
+                            al gusto de pimienta,
+                            suficiente de hoja de plátano (asada),
+                            4 filetes de huachinango,
+                            1 taza de queso oaxaca, deshebrado,
+                            1 taza de cebolla morada, fileteada,
+                            suficiente de orégano fresco (para decorar)</span>
+                        <span class="procedimiento">Calienta una sartén a temperatura media, agrega un poco de aceite
+                            sus sabores, añade el agua y el Puré de tomate chile fresco Del Fuerte®, sazona con comino,
+                            orégano, sal y pimienta, y cocina por 5 minutos más.
+                            Licúa lo anterior hasta obtener una mezcla tersa.
+                            Arma un empapelado con la hoja de plátano, coloca el pescado, salsa, un poco de queso Oaxaca
+                            y la cebolla; cierra de manera que se selle.
+                            Calienta una sartén a temperatura baja, agrega el pescado envuelto y tapa la sartén, cocina
+                            el pescado por 30 minutos aproximadamente.
+                            Desenvuelve el pescado y sirve con orégano fresco.</span>
+                    </article>
+                </a>
+
+                <a href="" class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Pechugas rellenas de lechuga y jitomate deshidratado</h3>
+                            <p>Estas pechugas de pollo que son jugosas y deliciosas. Van rellenas de una exquisita
+                                mezcla de lechuga, queso de cabra y jitomate deshidratado que le hacen juego perfecto.
+                                ¡Lo mejor de todo es que son muy fáciles de preparar!</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://cdn7.kiwilimon.com/recetaimagen/27675/26768.jpg"
+                                alt="Pechugas rellenas de lechuga y jitomate deshidratado">
+                        </div>
+                        <span class="ingredientes"> 4 pechugas de pollo,
+                            1 cucharadita de sal,
+                            1/2 cucharaditas de pimienta,
+                            2 cucharadas de aceite,
+                            1 paquete de Lechuga Francesa,
+                            100 gramos de queso de cabra,
+                            1 taza de jitomate deshidratado,
+                            4 cucharadas de hoja de albahaca</span>
+                        <span class="procedimiento">Precalienta el horno a 180°C.
+                            Abre las pechugas en mariposa con ayuda de un cuchillo. Salpimenta por ambos lados y sella en un sartén a fuego alto con aceite. Escurre.
+                            Rellena cada pechuga con hojas de Lechuga Francesa Eva, queso de cabra, jitomates deshidratados y hojitas de albahaca.
+                            Coloca en una charola para horno y hornea por 30 a 40 minutos o hasta que las pechugas estén cocidas. Sirve de inmediato. </span>
+
+                    </article>
+                </a>
+
+                <a href="" class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Hot cakes de roles de canela</h3>
+                            <p>Un desayuno con hot cakes es la mejor decisión que puedes tomar el fin de semana, pero si
+                                además los fusionas con el increíble sabor de los roles de canela, estos se convertirán
+                                en un desayuno favorito por excelencia y con toda la energía.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://cdn7.kiwilimon.com/recetaimagen/36744/45851.jpg" alt="Imagen 
+                            hot cakes de roles de canela">
+                        </div>
+                        <span class="ingredientes"> 2 Huevos San Juan,
+                            1 1/2 tazas de harina,
+                            1 cucharadita de polvo para hornear,
+                            1/2 cucharaditas de bicarbonato,
+                            2 cucharadas de azúcar,
+                            1 1/2 tazas de leche,
+                            1 cucharadita de esencia de vainilla,
+                            3 cucharadas de mantequilla (derretida),
+                            1/2 tazas de azúcar mascabado (para el glaseado de canela),
+                            1/4 tazas de agua,
+                            2 cucharaditas de canela en polvo (para el glaseado de canela),
+                            1/3 tazas de mantequilla ((90 g) para el glaseado de canela),
+                            1/4 tazas de crema para batir (para el glaseado de canela),
+                            2 1/2 cucharadas de harina,
+                            1/2 tazas de queso crema (para el glaseado),
+                            1/4 tazas de miel de maple (para el glaseado),
+                            1/4 tazas de crema para batir,
+                            suficiente de mantequilla (para cocinar hot cakes),
+                            1/2 tazas de nuez pecana (tostada y picada finamente, para decorar),
+                            al gusto de canela en polvo (para decorar) </span>
+                        <span class="procedimiento">Para los hot cakes, mezcla la harina con el polvo para hornear, el bicarbonato y el azúcar; incorpora las piezas de Huevos San Juan® y vierte la leche poco a poco. Después añade la vainilla, la mantequilla y mezcla perfectamente. Refrigera 15 minutos.
+                            Para el glaseado de canela, en una olla a temperatura media, calienta el azúcar mascabado con el agua y mueve hasta comenzar a formar un caramelo, agrega la canela, mezcla y después añade la mantequilla, la crema para batir y la harina. Cocina durante 5 minutos en total, pues este proceso debes realizarlo rápidamente para evitar sobrecalentar la mantequilla y que se formen grumos por el azúcar. Enfría a temperatura ambiente. Debes obtener una textura semiespesa. Coloca dentro de una manga y reserva.
+                            Para el glaseado, con ayuda de un globo mezcla el queso crema con la miel de maple, luego añade la crema para batir. Reserva.
+                            Calienta un sartén antiadherente a temperatura media, agrega un poco de mantequilla, forma los hot cakes y espera 2 minutos a que se cocine un poco, entonces agrega la mezcla del glaseado de canela en forma de espiral sobre el hot cake, cocina por unos minutos más hasta que comience a fundirse el azúcar con el calor y voltea. Retira del calor y repite estos pasos con el resto de la mezcla.
+                            Calienta un sartén antiadherente a temperatura media, agrega un poco de mantequilla, forma los hot cakes y espera 2 minutos a que se cocine un poco, entonces agrega la mezcla del glaseado de canela en forma de espiral sobre el hot cake, cocina por unos minutos más hasta que comience a fundirse el azúcar con el calor y voltea. Retira del calor y repite estos pasos con el resto de la mezcla.
+                            Sirve los hot cakes con el glaseado y decora con nuez pecana.</span> 
+                    </article>
+                </a>
+
+                <a href="" class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Auténticos chiles en nogada</h3>
+                            <p>Un platillo emblemático con los colores que representan a México y que no puede faltar en
+                                tu mesa en estas fiestas patrias. Así que no esperes más y cocina los auténticos chiles
+                                en nogada.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://cdn7.kiwilimon.com/recetaimagen/24558/19527.jpg"
+                                alt="Imagen Auténticos chiles en nogada">
+                        </div>
+                        <span class="ingredientes">50 mililitros de aceite vegetal,
+                            2 dientes de ajos (picados),
+                            1/2 cebollas (picada),
+                            350 gramos de carne molida (de res y cerdo),
+                            5 jitomates rojos (molidos),
+                            100 gramos de almendra  (peladas),
+                            100 gramos de pasita,
+                            2 plátanos macho (picados y fritos),
+                            100 gramos de piñon,
+                            5 clavos de olor,
+                            20 gramos de canela,
+                            10 gramos de pimienta,
+                            20 gramos de sal,
+                            2 duraznos (criollo),
+                            2 peras (lechera),
+                            2 manzanas (panocheras),
+                            1 acitrón,
+                            4 chiles (poblanos, asados, pelados y desvenados),
+                            4 huevos,
+                            10 gramos de azúcar,
+                            40 gramos de harina,
+                            500 gramos de nuez de castilla (sin piel),
+                            700 mililitros de leche de vaca,
+                            1 queso de cabra, poblano,
+                            1/2 manojos de perejil (picado),
+                            3 granadas rojas</span>
+                        <span class="procedimiento"> Calienta el aceite y fríe el ajo,la cebolla y la carne.
+                            Agrega el jitomate molido, las almendra,las pasas, el plátano macho y el piñón.
+                            Sazona con orégano, clavo, canela, tomillo, pimienta molida y sal, mezcla hasta integrar.
+                            Añade el durazno,la pera,la manzana y el acitrón. Retira la canela y el tomillo.
+                            En un tazón, bate las claras a punto de turrón. Incorpora las yemas de una en una. Añade el harina y la sal.
+                            Rellena los chiles asados, pelados y desvenados.
+                            Enharina los chiles, capealos con la mezcla de huevo y fríelos en aceite. Escúrrelos en una servilleta de papel.
+                            Para la nogada, licúa la leche con la nuez,el queso de cabra,el azúcar y la sal.
+                            Baña los chiles con la nogada y decora con el perejil picado y la granada roja. Sirve.</span>
+
+                    </article>
+                </a>
+
+                <a href="" class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Lomo en salsa de almendras</h3>
+                            <p>Este es un plato completo, lleno de proteínas y grasas buenas provenientes de los frutos
+                                secos, por lo que es perfecto para disfrutarlo en familia.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://t2.rg.ltmcdn.com/es/images/1/3/8/lomo_en_salsa_de_almendras_74831_paso_8_600.jpg"
+                                alt="Imagen lomo en salsa de almendras">
+                        </div>
+                        <span class="ingredientes">
+                            500 gramos de lomo en filetes o entero,
+                            50 gramos de almendras crudas,
+                            1 cebolla,
+                            50 gramos de harina de trigo,
+                            1 vaso pequeño de caldo de carne o pastilla de caldo,
+                            1 vaso pequeño de crema de leche,
+                            1 hoja de laurel,
+                            2 dientes de ajos,
+                            1 chorro de aceite de oliva,
+                            1 pizca de sal,
+                            1 pizca de pimienta
+                        </span>
+                        <span class="procedimiento">
+                            Pon una sartén a fuego medio con un poco de aceite, añade las almendras crudas y dos dientes de ajo y 
+                            saltea ambos ingredientes hasta que las almendras estén doradas, si se doran antes los ajos sácalos.
+                            Cuando estén listas las almendras, sácalas y pásalas a un bol con los ajos para triturar.
+                            Pon una sartén a fuego medio con un poco de aceite, añade las almendras crudas y dos dientes de ajo y 
+                            Pon un poco de harina en un plato. Salpimienta los trozos de lomo, pásalos por harina por los dos lados 
+                            y sacude bien la carne para que suelte la harina que sobra. Truco: puedes hacer el lomo en salsa de 
+                            almendras entero o cortado en filetes, de cualquier forma es necesario enharinar la carne. En una sartén 
+                            o cazuela con un buen chorro de aceite a fuego medio alto, dora los trozos de lomo, vuelta y vuelta, 
+                            sácalos y resérvalos. En la misma sartén o cazuela, añade un poco más de aceite para que se caliente. 
+                            Pica la cebolla y sofríela, cuando empiece a coger color añade la hoja de laurel. Truco: para hacer 
+                            lomo en salsa de almendras y champiñones, saltea aparte 3-4 champiñones laminados y resérvalos. Cuando 
+                            la cebolla esté bien dorada, agrega un vaso pequeño de caldo de carne o hecho con una pastilla de caldo 
+                            y la nata (crema de leche), remueve todo y deja cocinar unos minutos la salsa. Si queda muy espesa, añade
+                            más crema de leche o caldo. Puedes hacer el caldo de carne casero o diluir una pastilla en un vaso de 
+                            agua caliente. Truco: también puedes hacer el lomo en salsa de almendras sin nata triturando anacardos 
+                            con un poco de agua templada o caliente. Saca la hoja de laurel y añade todo al bol donde tienes las 
+                            almendras y los ajos y tritura hasta que quede una crema fina. Si se queda muy espesa, puedes seguir 
+                            añadiendo caldo. Si quieres una crema más fina, se puede pasar por un colador. Echa toda la crema 
+                            triturada a la cazuela y añade los trozos de lomo o el lomo entero. Prueba de sal y pimienta para 
+                            corregir si es necesario. Deja cocinar todo unos minutos y ya estará listo para servir. Al cocinarse 
+                            más, se puede espesar la salsa bastante, por lo que quizá es necesario añadir más nata o caldo.
+                            ¡Listo el lomo en salsa de almendras! Puedes acompañarlo con unas patatas o con unos champiñones rebozados.
+                            Si te ha gustado la receta de Lomo en salsa de almendras, te sugerimos que entres en nuestra categoría 
+                            de Recetas de Cerdo.
+                        </span>
+
+                    </article>
+                </a>
+
+                <a href="" class="reciente-item">
+                    <article>
+                        <div>
+                            <h3>Bisteces al albañil</h3>
+                            <p>Los bisteces al albañil son un platillo fácil y con sabor casero tradicional que a todos
+                                les va a encantar. Por esto, seguro que podrás preparar esta receta de bisteces al
+                                albañil cualquier día de la semana.</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://t1.rg.ltmcdn.com/es/images/1/1/8/bisteces_al_albanil_74811_300_square.jpg"
+                                alt="Imagen Bisteces al albañil">
+                        </div>
+                        <span class="ingredientes"> 500 gramos de bisteces de res,
+                            1 pieza de cebolla mediana fileteada,
+                            1 diente de ajo picado finamente,
+                            4 piezas de tomatillo verde cortado en medias lunas,
+                            3 chiles serranos cortados en tiras,
+                            sal y pimienta al gusto,
+                            2 cucharadas soperas de aceite vegetal,
+                            tortilla de maíz o de harina</span>
+                        <span class="procedimiento">Para preparar la res al albañil, calienta dos cucharadas de aceite vegetal y fríe la carne por 2 minutos, revuelve constantemente.
+                            Truco: trocea los bisteces para que sea más fácil servirlos. También puedes preparar puntas de filete al albañil.
+                            Agrega la cebolla fileteada y el diente de ajo finamente picado, mezcla y sazona con un poco de pimienta, deja cocinar hasta que la cebolla comience a suavizarse.
+                            Luego, agrega el tomatillo verde cortado en medias lunas y mezcla nuevamente para ir integrando todos los ingredientes, deja cocinar por 3 minutos o hasta que el tomatillo haya suavizado y cambiado un poco su color.
+                            Truco: si lo prefieres, puedes licuar el tomatillo y agregarlo como salsa.
+                            Por último, agrega el chile serrano cortado en tiras, sazona con sal al gusto y deja cocinar por 3 minutos, mueve constantemente para integrar todos los sabores.
+                            ¡Listo! Para disfrutar esta receta, puedes preparar fajitas de res al albañil o acompañar con tortillas de maíz. También puedes agregar un toque de limón y, si te gusta más picante, añade un poco de salsa a tu gusto</span>
+                    </article>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="eslogan-section section-container">
+            <div class="content-wrapper">
+                <p class="frase">
+                    La cocina de autor es poner tu personalidad en lo que haces y ese sentimiento la convierte en algo
+                    distinto.
+                    (Ferran Adriá)
+                </p>
+                <div class="imagen-eslogan">
+                    <div class="image-container">
+                        <img class="image" src="https://elmundodeyola.files.wordpress.com/2017/07/imagen-destacada.png"
+                            alt="imagen del banner">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="main-footer">
+        <h2 class="title">¿Quiéres apoyarnos?</h2>
+        <p class="subtitle">Si quieres trabajar en nuestro equipo escribenos un correo.</p>
+        <!-- Para abrir el correo de equipo con la direción del enlace -->
+        <a href="mailto:fenixfuego100@gmail.com">fenixfuego100@gmail.com</a>
+        <div class="social-networks">
+            <!-- Links de contacto, el _blank sirve para abrir el vinculo una nueva pestaña en blanco -->
+            <a href="https://github.com/fenixfuego1/practicandoGit" target="_blank"><span class="jam jam-github"></span>
+            </a>
+            <a href="https://www.youtube.com/channel/UCO-nBNmfv9MZFp54Er7RtwQ" target="_blank"><span class="jam jam-youtube"></span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=2313253031&text=Holis" target="_blank"><span class="jam jam-whatsapp"></span>
+            </a>
+            <a href="https://www.instagram.com/jonaaff" target="_blank"><span class="jam jam-instagram"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/jonathan-alexis-bello-l%C3%B3pez-a4b3391b9/" target="_blank"><span class="jam jam-linkedin"></span>
+            </a>
+        </div>
+        <p>Todos los derechos reservados &copy; 2021 | Jonathan Bello, Angel Gasca, Ines Gonzalez, Zuri Peralta</p>
+    </footer>
+
+    <!-- Script para nuestro menu en moviles movil -->
+    <script src="scripts/menu.js"></script>
+    <!--  -->
+    <script src="scripts/receta.js"></script>
+</body>
+
+</html>

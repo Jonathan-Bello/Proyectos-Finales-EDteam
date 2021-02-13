@@ -1,0 +1,981 @@
+/* ----- ESTILOS BASE ----- */
+
+/*  Importación de fuentes desde Google Fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+
+/*  Importación de fuentes desde un archivo del mismo proyecto  */
+@font-face {
+  font-family: "Proxima Nova Rg";
+  src: url("/fonts/proxima-nova-bold.otf");
+}
+
+:root {
+  /*  Variables del proyecto  */
+
+  /*  Colores  */
+  --primary-color: hsl(30, 90%, 52%);
+  --primary-color-alt: hsl(30, 95%, 40%);
+  --title-color: #121f26;
+  --text-color: #676f73;
+  --body-bg-color: #fafdff;
+  --white-color: #ffffff;
+  /* Variables template */
+  --color: var(--primary-color);
+  --color-alt: var(--primary-color-alt);
+
+  /*  Fuentes  */
+  --title-font: "Proxima Nova Rg", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+
+  /*  Tamaños  */
+  --header-height: 3rem; /* altura del header */
+  --section-spacing: 4rem; /* Separación entre secciones*/
+  --block-spacing: 2rem; /*Separación entre bloques*/
+  --title-line-height: 1.3; /*Alto de linea de los titulos*/
+  --body-line-height: 1.6; /*alto de linea del texto del contenido*/
+
+  /* Tamaños de fuentes */
+  /*
+   Es muy recomendable guardar estas variables
+   To-do lo que sea sensible a tener cambios en el futuro
+   y sea dificil de actualizar poco a poco, es recomendable
+   meterlo en una variable
+   */
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --h4-font-size: 1rem;
+  --big-font-size: 1rem;
+  --normal-font-size: 0.875rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.6875rem;
+
+  /* Capas */
+  /*
+    z-index es indicar que capa va arriba de otra, en el contexto del apilamiento
+  */
+  --z-back: -10;
+  --z-normal: 1;
+  --z-front: 10;
+  --z-tooltip: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-fixed: 50;
+  --z-off-canvas: 100;
+
+  /*  Anchura máxima del contenido en desktop */
+  --max-width: 1200px;
+
+  /* Otros */
+  --border-radius: 0.5rem;
+  --box-shadow: 0 2px 2px rgba(36, 47, 66, 0.1);
+}
+
+/* El valor de las variables pero en computadora */
+/* 1024px tamaño minimo de una computadora */
+@media screen and (min-width: 1024px) {
+  /*  Variables de tamaño en desktop  */
+  :root {
+    --header-height: 6rem;
+    --section-spacing: 8rem;
+    --block-spacing: 4rem;
+
+    --h1-font-size: 3rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.25rem;
+    --big-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/* ESTILOS BASE */
+body {
+  /* flex y column para colocar el contenido de la pagina en vertical */
+  display: flex;
+  flex-direction: column;
+  /*
+      La altura minima la usamos para que body se espanda todo el tamaño
+      que tenga disponible, para que si hay muy poco contenido el footer no se
+      suba.
+
+      100vh viper height    -> el tamaño total de la altura de la pantalla del usuario
+
+      Le restamos el tamaño del header ya que siempre estara el header en nuestro sitio web
+      Y nos aseguramos que este del tamaño del viewport
+    */
+  min-height: calc(100vh - var(--header-height));
+  color: var(--text-color);
+  /*
+      Ya que nuestro header siempre estara en la parte de arriba, y
+      para evitar que nuestro contenido  choque con el header. Cuando pones
+      el espacio reservado, llegara un momento donde el contenido chocque con el header. y asi lo evitamos
+    */
+  padding-top: var(--header-height);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  line-height: var(--body-line-height);
+  background-color: var(--body-bg-color);
+}
+
+/* Estilos base a nuestras etiquetas HTML generales*/
+a {
+  color: var(--primary-color);
+}
+
+p {
+  /* Para evitar el colapsado de margenes */
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Para evitar el colapsado de margenes */
+  margin-top: 0;
+  color: var(--title-color);
+  font-family: var(--title-font);
+  line-height: var(--title-line-height);
+  /* Para que este mas grueso que el texto normal */
+  font-weight: 800;
+}
+
+/* Definición nuestras variables del tamaño de los titulos */
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+/* Para darle separación a nuestros h1 */
+.main h1 {
+  padding-top: var(--block-spacing);
+  margin-bottom: var(--block-spacing);
+}
+
+/* Para delimitar el contenido, y no toque los bordes de la pantalla */
+.content-wrapper {
+  width: calc(100% - 2rem);
+  /* Definimos el maximo del ancho */
+  max-width: var(--max-width);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* Content wrapper para computadora */
+@media screen and (min-width: 1024px) {
+  .content-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    /* Para centrarlo, el margin left & right */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Ponemos la separación entre las sectiones */
+.section-container {
+  margin-bottom: var(--section-spacing);
+}
+
+/* Centramos el h1 y h2 */
+.section-container h1,
+.section-container h2 {
+  text-align: center;
+}
+
+/* Le damos a las imagenes un aspecto ratio de 16:9 */
+.image-container {
+  width: 100%;
+  height: 0;
+  /* Ocultamos el contenido que se pueda desbordar */
+  overflow: hidden;
+  position: relative;
+  /* Con este padding optenemos el aspecto 16:9, aunque no tengamos una altura */
+  padding-bottom: 56.25%;
+}
+
+.image-container img {
+  /* Para que se expanda a todo su contenedor */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Para que no se deforme la imagen */
+  object-fit: cover;
+}
+
+/* ----- BOTONES ----- */
+
+/* Boton principal */
+.button {
+  /* Para poder darle un padding */
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  /* Le damos el redondeado */
+  border-radius: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--white-color);
+  background: var(--color);
+  border: 1px solid var(--color);
+}
+
+/* Para cuando el mouse se posicione encima del boton */
+.button:hover {
+  background: var(--color-alt);
+}
+
+/* Nuestras variaciones de boton */
+
+/* Boton blanco */
+.button.white {
+  /* Cambiamos nuestras variables templates */
+  --color: var(--white-color);
+  --color-alt: var(--body-bg-color);
+
+  color: var(--primary-color);
+}
+
+/* boton fantasma (con borde sin relleno) */
+.button.ghost {
+  color: var(--color);
+  background: transparent;
+}
+.button.ghost:hover {
+  color: var(--white-color);
+  background: var(--color);
+}
+.button.ghost.white:hover {
+  color: var(--primary-color);
+  background: var(--color);
+}
+
+/*  ----- MENÚ PRINCIPAL -----  */
+.main-header {
+  /* Para que los elementos se pongan al lado del otro */
+  display: flex;
+  /* Dejamos el elemento fijo, no importa si se hace scroll ahi seguiran */
+  position: fixed;
+  /* Para que siempre este al inicio de nuestro sitio web */
+  top: 0;
+  /* Usamos nuestra variable, nos ahorramos problemas de desbordamiento o calcularlo con JavaScript  */
+  height: var(--header-height);
+  /* Para que abarque todo el ancho */
+  width: 100%;
+  background: var(--white-color);
+  /* Le damos una sombra */
+  box-shadow: 0 3px 5px rgba(112, 126, 132, 0.1);
+  /*
+    Ocupamos nuestra variable para elementos fijos.
+    Asi si nosotros tenemos un elemento que este sobre el header como un modal
+    le damos un valor mayor que este z-index
+  */
+  z-index: var(--z-fixed);
+}
+
+.main-header .content-wrapper {
+  display: flex;
+  /* Para separar nuestro logo del menu */
+  align-items: center;
+}
+
+/* Icono del menu en movil */
+/* .jam recuerda que es para los iconos que importamos */
+.main-header .jam {
+  /* Para moverlo hasta la derecha de la pantalla */
+  margin-left: auto;
+  /* Le damos el color de titulo para que este mas oscuro que el texto general */
+  color: var(--title-color);
+  /* Le damos el tamaño, como es un spam el icono usamos font-size para definir el tamaño */
+  font-size: 2.5rem;
+  /* Para que al pasar el mouse este se ponga como manita */
+  cursor: pointer;
+}
+
+/* Ocultamos los iconos en escritorio */
+@media screen and (min-width: 1024px) {
+  .main-header .jam {
+    display: none;
+  }
+}
+
+/* El tamaño de nuestro logo en movil */
+.main-header img {
+  height: 2.5rem;
+}
+
+/* El tamaño de nuestro logo en escritorio */
+@media screen and (min-width: 1024px) {
+  .main-header img {
+    height: 5rem;
+  }
+}
+
+/* Para el menu de navegación */
+.main-menu {
+  /* Centramos el contenido de manera absoluta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Colocamos nuestro menu denuevo a la derecha */
+/* No podemos guardar el 1024 en variables :c */
+@media screen and (min-width: 1024px) {
+  .main-menu {
+    margin-left: auto;
+  }
+}
+
+/* Diseño de la navegación en movil */
+@media screen and (max-width: 1024px) {
+  .main-menu {
+    /* Lo ponemos fijo */
+    position: fixed;
+    /* Lo colocamos al inicio de la pantalla */
+    top: 0;
+    left: 0;
+
+    /* Para que abarque toda la pantalla width y height */
+    width: 100%;
+    height: 100vh;
+
+    /* un fondo para ocultar el contenido de detras */
+    background: var(--white-color);
+
+    /* Para que el menu se ponga arriba del header y todo el contenido */
+    z-index: var(--z-off-canvas);
+
+    /* Para la animación, hacemos que sea pequeño al inico, y lo animamos para crecer */
+    /* el crecimiento */
+    transform: scale(0);
+    /* la duración */
+    transition: transform 0.25s;
+  }
+}
+
+/* reinicializamos el scale de la animación */
+.main-menu.active {
+  transform: initial;
+}
+
+/* Reseteamos los estilos de los ul */
+/*
+  Nota, no es buena practica usar los selectores HTML
+  Lo ideal es que cada elemento tenga su clase.
+  (Pero para no saturar orita con cosas de css, y que cuando
+  escribamos las proximas paginas nos evitemos errores de escribir
+  clases mal, y estarlas buscando. Pero lo recomendable es que sean puras clases)
+*/
+.main-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Para que los elementos se coloquen uno al lado del otro */
+@media screen and (min-width: 1024px) {
+  .main-menu ul {
+    display: flex;
+  }
+}
+
+/* Posicionamos el boton para cerrar */
+.main-menu .jam-close {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+/* Los estilos de los enlaces de navegación */
+.main-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--title-color);
+  /* Quitamos el decorado por defecto de enlaces */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* El efecto al pasar el mouse en los enlaces */
+.main-menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Centramos los li en movil y los hacemos un poco mas grandes */
+@media screen and (max-width: 1024px) {
+  .main-menu a {
+    text-align: center;
+    font-size: var(--big-font-size);
+  }
+}
+
+/* Para alinear el ultimo li, del navbar */
+@media screen and (min-width: 1024px) {
+  .main-menu ul li:last-of-type a {
+    /* Le quitamos el padding de la derecha al ultimo navbar */
+    padding-right: 0;
+  }
+}
+
+/* ----- BANNER PRINCIPAL ----- */
+
+/* Estilos generales del banner, el color y un padding */
+.main-banner {
+  background: var(--primary-color);
+  padding: 2rem 0;
+}
+
+/* Le damos una altura minima al baner en escritorio */
+@media screen and (min-width: 1024px) {
+  .main-banner {
+    min-height: 400px;
+  }
+}
+
+/* Alineamos el contenido al centro en movil */
+@media screen and (max-width: 1024px) {
+  .main-banner {
+    text-align: center;
+    padding: 2rem 0;
+  }
+}
+
+/* Definimos el tipo de posicionamiento */
+.main-banner .content {
+  /* Definidimos el contendio que sera un grid*/
+  /* al o definir nuemro de columna nos coloca solo 1, perfecto para movil */
+  display: grid;
+  gap: 2rem;
+}
+
+/* Alineamos el p y boton para que concuerde con el contenido */
+@media screen and (min-width: 1024px) {
+  .main-banner .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-banner .container:last-of-type {
+    align-items: center;
+  }
+}
+
+/* Hacemos que en escritorio existan 2 columnas */
+@media screen and (min-width: 1024px) {
+  .main-banner .content {
+    /* Hacemos que cada columa mida un fr (una fracción) */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Le damos el color blanco al titulo, para que contraste mejor */
+.main-banner .title {
+  color: var(--white-color);
+  margin-bottom: 1rem;
+}
+
+/* Alineamos nuestro titulo a la izquieda en escritorio */
+@media screen and (min-width: 1024px) {
+  .main-banner .title {
+    text-align: left;
+    font-size: 5rem;
+  }
+}
+
+.main-banner .subtitle {
+  margin-bottom: 1.5rem;
+  /* agrandamos la fuente */
+  font-size: var(--big-font-size);
+  /* damos el color blanco */
+  color: var(--white-color);
+  /* Le damos opacidad por la jerarquia visual, con respecto al titulo */
+  opacity: 0.7;
+}
+
+/* Hacemos que la imagen no este tan grande y no abarque de lado a lado en movil */
+.main-banner .image {
+  width: 80%;
+}
+
+/* ----- RECETAS DESTACADAS------ */
+.recetas-destacadas h2 {
+  margin-bottom: var(--block-spacing);
+}
+
+.recetas-destacadas .content-wrapper {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .recetas-destacadas .content-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.destacada-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.destacada-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.destacada-item p {
+  margin-bottom: 0;
+}
+
+/*--------RECETAS RECIENTES---------  */
+
+.recetas-recientes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recetas-recientes h2 {
+  margin-bottom: var(--block-spacing);
+}
+
+.recetas-recientes .content-wrapper {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: var(--block-spacing);
+}
+
+@media screen and (min-width: 680px) {
+  .recetas-recientes .content-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recetas-recientes .content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.reciente-item {
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: var(--primary-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Damos el efecto de hover */
+.reciente-item:hover img {
+  opacity: 0.1;
+  will-change: opacity;
+}
+
+.reciente-item:hover article > div:first-of-type {
+  will-change: opacity;
+  opacity: 1;
+}
+
+.reciente-item article {
+  position: relative;
+}
+
+.reciente-item img {
+  transition: opacity 0.25s;
+}
+
+/* Poner atras el texto del card */
+.reciente-item article > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: var(--white-color);
+  transition: opacity 0.25s;
+  z-index: var(--z-front);
+}
+
+.reciente-item article > div:first-of-type h3 {
+  margin-bottom: 0.25rem;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.reciente-item article > div:first-of-type p {
+  margin-bottom: 0;
+  opacity: 0.8;
+  font-size: var(--small-font-size);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* -------------FRASE--------------- */
+.frase {
+  margin-bottom: 0;
+  color: var(--title-color);
+  font-size: 4rem; /*var(--big-font-size);*/
+  text-align: center;
+  font-family: "French Script MT", "salsa";
+}
+
+.imagen-eslogan {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .imagen-eslogan {
+    width: 500px;
+  }
+}
+
+/*  ----- FOOTER -----  */
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  /* height: var(--header-height); */
+  font-size: var(--small-font-size);
+  background: var(--text-color);
+}
+
+.main-footer p {
+  margin-bottom: 0;
+  color: var(--body-bg-color);
+}
+
+
+.main-footer .title {
+  margin: 0.8rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-footer .title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.main-footer .subtitle {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-footer .subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/*  ----- REDES SOCIALES -----  */
+
+.social-networks {
+  margin: 0.5rem;
+}
+
+.social-networks a {
+  padding: 0.25rem;
+  color: var(--body-bg-color);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.social-networks a:hover {
+  color: var(--primary-color);
+}
+
+.social-networks a:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+/* ---------PÁGINA DE RECETAS-------------- */
+
+.recetas-entradas-platos-fuertes h2 {
+  margin-bottom: var(--block-spacing);
+}
+
+.recetas-entradas-platos-fuertes .content-wrapper {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .recetas-entradas-platos-fuertes .content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.recetas-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: var(--primary-color);
+}
+
+.recetas-item .image-container {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.recetas-item h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: hsl(200, 6%, 25%);
+}
+
+.recetas-item p {
+  margin-bottom: 0;
+  color: var(--white-color);
+}
+
+/* ---------------Bebidas------------ */
+
+.bebidas h2 {
+  margin-bottom: var(--block-spacing);
+}
+
+.bebidas .content-wrapper {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .bebidas .content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------Postres------------- */
+
+.postres h2 {
+  margin-bottom: var(--block-spacing);
+}
+
+.postres .content-wrapper {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .postres .content-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*  ----- QUIÉNES SOMOS PAGES -----  */
+
+.about-us .content-wrapper {
+  display: grid;
+  gap: var(--block-spacing);
+  --max-width: 800px;
+}
+
+.about-item {
+  display: grid;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* Para invertir los elementos y los titutlos esten arriba de la imagen */
+.about-item > div:first-of-type {
+  order: 2;
+}
+
+/* Hacemos que se alternen los elementos(imagen-texto, texto imagen ) */
+@media screen and (min-width: 1024px) {
+  /* Modificamos los que no son par con el old */
+  .about-item:nth-child(odd) > div:nth-of-type(2) {
+    /* invertimos */
+    order: 2;
+  }
+}
+
+/* Dividimos los items, en columnas de 2 */
+@media screen and (min-width: 1024px) {
+  .about-item {
+    grid-template-columns: 1fr 1fr;
+    /* Damos una separación entre la imagen y el contenido */
+    gap: 2rem;
+    text-align: left;
+  }
+}
+
+/* Corregimos el espacido */
+.about-item h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Corregimos el espacido */
+.about-item p {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .about-item h2 {
+    text-align: left;
+  }
+}
+
+.about-item img {
+  border-radius: var(--border-radius);
+}
+
+/*  ----- CONTACTO -----  */
+
+/* Centramos y separamos el contenido (agregamos un grid) */
+.contact-section .content-wrapper {
+  display: grid;
+  gap: var(--block-spacing);
+  text-align: center;
+}
+
+/* Le damos 2 columnas en desktop */
+@media screen and (min-width: 1024px) {
+  .contact-section .content-wrapper {
+    /* Le damos una anchura maxima */
+    --max-width: 800px;
+    /* Decimos que sean 2 columnas */
+    grid-template-columns: 1fr 1fr;
+    /* Alineamos el texto a la izquierda */
+    text-align: left;
+  }
+}
+
+/* Ponemos un margen abajo a los h4 */
+.contact-section h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Metemos a los items de contacto en otro grid para separarlos con gap */
+/* Al separar asi los elementos no evitamos estar calculando margenes/paddings */
+.contact-section address {
+  display: grid;
+  gap: 1rem;
+  font-style: normal;
+}
+
+/* Intercambiamos las seciones en escritorio */
+@media screen and (min-width: 1024px) {
+  .contact-section address {
+    /* Invertimos el orden de los elementos */
+    order: -1;
+    gap: 2rem;
+  }
+}
+
+/* Hacemos mas peques a los iconos */
+.contact-item .jam {
+  font-size: 1rem;
+}
+
+/* Estilos del mapa */
+.map-ubication {
+  /* Hacemos que el mapa abarque de lado a lado */
+  width: 100%;
+  /* Le achicamos la altura */
+  height: 200px;
+
+  /* Lo recortamos para ponerle un borde redondeado */
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+/* Estilos de los iconos */
+.social-networks-contact a {
+  padding: 0.25rem;
+  color: var(--text-color);
+  font-size: 2rem;
+  text-decoration: none;
+}
+/* Efecto de los iconos */
+.social-networks-contact a:hover {
+  color: var(--primary-color);
+}
+
+/* le quitamos el margin que sobra al ultimo icono */
+.social-networks-contact a:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+/* -------RECETA PAGES-------- */
+
+.ingredientes, .procedimiento {
+  display: none;
+}
+
+.receta h2, .receta p {
+  text-align: center;
+}
+
+.receta [alt="logito"] {
+  object-fit: contain;
+}
+
+#main-receta{
+  border: 2px solid black;
+  padding: 1em;
+  margin: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+@media screen and (min-width: 1024px){
+  #main-receta{
+    border: 2px solid black;
+    padding: 2em;
+    margin: 1rem 10em;
+    border-radius: 2rem;
+  }
+}
+
+.list-ingredientes ul{
+  text-align: left;
+  list-style: square;
+  padding: 0;
+  margin: 1em 4em;
+}
+
+
+/* PRUEBAS */
+.imgMe{
+  object-fit: contain;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <!-- Iconos Jamicons -->
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="/styles/index.css">
+
+    <!-- Icono en el title -->
+    <link rel="icon" type="image/png" href="/images/undraw_cooking_orange.svg">
+
+
+    <title>Nosotros</title>
+</head>
+
+<body>
+    <!-- Pondremos el logo y los links a las demas páginas -->
+    <header class="main-header section-container">
+        <div class="content-wrapper">
+            <!-- Logo -->
+            <!-- el / indica que el vinculo dirigira a esta misma página -->
+            <a href="/">
+                <!-- imagen del logo -->
+                <!-- src = "url o lugar de la imagen" alt(texto alternativo, sale cuando no se carga la imagen) -->
+                <img src="/images/undraw_Chef_cu0r.svg"
+                    alt="Logo de la empresa">
+            </a>
+
+            <!-- Para un icono de menu en movil -->
+            <span class="jam jam-menu" id="open-menu-button"></span>
+
+            <!-- Nav bar -->
+            <nav class="main-menu" id="main-menu">
+                <span class="jam jam-close" id="close-menu-button"></span>
+
+                <!-- ul(unordened list)  aqui estaran los links de las paginas-->
+                <ul>
+                    <!-- list(list item) -->
+                    <li>
+                        <!-- Link a una de nuestras páginas -->
+                        <!-- # es para que nos diriga a nada(por el momento) -->
+                        <a href="/index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/pages/recetas.html">Recetas</a>
+                    </li>
+                    <li>
+                        <a href="/pages/nosotros.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="/pages/contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="about-us section-container">
+            <h1>¿Quiénes somos?</h1>
+            <div class="content-wrapper">
+                <article class="about-item">
+                    <div class="image-container">
+                        <img src="/images/undraw_static_assets_rpm6.svg" alt="">
+                    </div>
+                    <div>
+                        <h2>Detalles del proyecto</h2>
+                        <p>Practica de HTML, CSS y con una pizca de JS para la clase de Programación Web. Se creo una página de recetas. Se hizo el uso de @media para hacer la página responsiva. Y js para el control del menu desplegable en moviles, y la carga de las página de recetas </p>
+                    </div>
+                </article>
+                <article class="about-item">
+                    <div class="image-container">
+                        <img src="/images/undraw_coding.svg" id="imgMe" alt="">
+                    </div>
+                    <div>
+                        <h2>Jonathan Alexis Bello López</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ad eum provident doloribus doloremque error vitae maxime asperiores. Provident aliquid officiis dolores mollitia tempora laborum sit amet quam animi excepturi?</p>
+                    </div>
+                </article>
+                <article class="about-item">
+                    <div class="image-container">
+                        <img src="/images/undraw_programming_2svr.svg" alt="">
+                    </div>
+                    <div>
+                        <h2>Angel Cesar Gasca Martinez</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ad eum provident doloribus doloremque error vitae maxime asperiores. Provident aliquid officiis dolores mollitia tempora laborum sit amet quam animi excepturi?</p>
+                    </div>
+                </article>
+                <article class="about-item">
+                    <div class="image-container">
+                        <img src="/images/undraw_working_late_pukg.svg" alt="">
+                    </div>
+                    <div>
+                        <h2>Zuri Irias Peralta Nava</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ad eum provident doloribus doloremque error vitae maxime asperiores. Provident aliquid officiis dolores mollitia tempora laborum sit amet quam animi excepturi?</p>
+                    </div>
+                </article>
+                <article class="about-item">
+                    <div class="image-container">
+                        <img src="/images/undraw_designer_life_w96d.svg" alt="">
+                    </div>
+                    <div>
+                        <h2>Ines del Carmen Gonzalez Gonzalez</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ad eum provident doloribus doloremque error vitae maxime asperiores. Provident aliquid officiis dolores mollitia tempora laborum sit amet quam animi excepturi?</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>Todos los derechos reservados &copy; 2021 | Jonathan Bello, Angel Gasca, Ines Gonzalez, Zuri Peralta</p>
+    </footer>
+
+    <script src="../scripts/menu.js"></script>
+</body>
+
+</html>
