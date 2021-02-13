@@ -5,7 +5,7 @@ Es una página responsiva sobre recetas de cosina.
 
 ## Autores
 
-Angel Cesar Gasca Martinez
-Ines del Carmen Gonzalez Gonzalez
-Zuri Irais Peralta Nava
-Jonathan Alexis Bello López
+- Angel Cesar Gasca Martinez
+- Ines del Carmen Gonzalez Gonzalez
+- Zuri Irais Peralta Nava
+- Jonathan Alexis Bello López
